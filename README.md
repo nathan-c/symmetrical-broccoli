@@ -2,6 +2,7 @@ Basic example of using docker to host the grpc example for C# behind an NGINX lo
 
 To run:
 ```
+cd csharp
 dotnet build
 dotnet publish
 docker-compose build

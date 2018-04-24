@@ -1,0 +1,18 @@
+version: '2'
+ 
+services:
+  app:
+    build:
+      context:  ./GreeterServer
+      dockerfile: Dockerfile
+    expose:
+      - "50051"
+ 
+  proxy:
+    build:
+      context:  ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    links:
+      - app
